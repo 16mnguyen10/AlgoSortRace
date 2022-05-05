@@ -1,0 +1,12 @@
+RUNTIME REPORT
+Merge Sort
+Merge sort comes in three parts of divide and conquer. We can assume that we are sorting total of n elements in the array. The divide step takes constant time which is O(1), the conquer step take some amount of time which is n/2 elements because we are recursively sorting two arrays, and merging takes O(n) time. Time complexity can be calculated with this T(n) = 2T(n/2) + θ(n). Hence the total time for merge sort function will become n(log n+1), which gives us a time complexity of  O(n*log n), cause merge sort divides the array in two halves and takes linear time to merge two halves.
+
+Quick Sort
+Quick sort has three run times, worst case, average case, and best case. Worst case occurs when the partition process always picks greatest or smallest element as pivot and the recurrence formula is T(n) = T(n-1) + θ(n). Average case by considering the case when partition puts O(n/9) elements in one set and O(9n/10) elements in other set. Following is recurrence is T(n) = T(n/9) + T(9n/10)+ θ(n). Best case occurs when the partitions are as evenly balanced as possible and with the same run time as merge sort.
+
+election Sort
+Selection sort loops over indices in the array. For each index, the array will compare the next index with the current index and swap if needed. Time Complexity is O(n2) because there are two nested loops and indexofminimum will always make n^2/2+n/2 iterations, regardless of input. This shows that increasing a size of an array by a factor of 1000 increases the running time by almost million times.
+
+Gold’s Pore Sort
+First, we compare all even-indexed cells to their next neighbor cell, and then compare all odd-indexed cells to their next neighbor cell. We implemented this algorithm using variable “status” to distinguish whether it is checking even-indexed cells or odd-indexed cells. When it’s swapping even-indexed cells, the status is equal to 0 O(1). When it’s over, the status changes to 1 O(1). Then, it starts to swap odd-indexed slots. And, when it’s over, the status changes to 0 again. Repeat this process until sorting is complete. We have for loop that increases the i=0 to array length N O(N). And, there are two for loops that comparing even-indexed cells or odd-indexed cells increasing by two. Therefore, there are (N/2) passes, so T(N) = N * (N/2) = N^2. Consequently, the time complexity is converted to O(N^2).
